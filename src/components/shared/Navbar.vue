@@ -1,5 +1,4 @@
 <script setup>
-import Logo from '@/assets/logo-white.svg'
 import { ref } from 'vue'
 import {
   Sheet,
@@ -9,22 +8,22 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet'
-
-const isOpen = ref(false)
-
-const toggleMenu = () => {
-  isOpen.value = !isOpen.value
-}
+import { Button } from '../ui/button'
+import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon } from '@heroicons/vue/24/outline'
+import Logo from '@/assets/logo-white.svg'
+import { User } from 'lucide-vue-next'
 </script>
 
 <template>
-  <nav class="py-6 px-10 flex items-center justify-between font-barlow bg-primary">
+  <nav
+    class="py-6 px-10 flex items-center justify-between font-barlow bg-primary fixed w-full z-30"
+  >
     <!-- Left Navlinks will hide in mobile device -->
     <!-- Mobile -->
     <div class="block sm:hidden">
       <Sheet>
         <SheetTrigger>
-          <i class="pi pi-bars" style="font-size: 1.5rem"></i>
+          <Bars3Icon class="size-6" />
         </SheetTrigger>
         <SheetContent>
           <SheetHeader>
@@ -55,6 +54,16 @@ const toggleMenu = () => {
       <RouterLink to="/support">
         <h3 class="font-semibold">Support</h3>
       </RouterLink>
+      <div>
+        <MagnifyingGlassIcon class="size-6" />
+      </div>
+      <RouterLink to="/login">
+        <User class="size-6" />
+      </RouterLink>
+      <RouterLink to="/cart">
+        <ShoppingBagIcon class="size-6" />
+      </RouterLink>
     </div>
   </nav>
 </template>
+
