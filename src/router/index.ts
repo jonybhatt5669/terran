@@ -1,4 +1,5 @@
 import LandingPage from '@/layouts/LandingPage.vue'
+import Login from '@/views/auth/Login.vue'
 import Home from '@/views/Home.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
@@ -14,6 +15,11 @@ const router = createRouter({
           component: Home,
         },
       ],
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login,
     },
   ],
 })
